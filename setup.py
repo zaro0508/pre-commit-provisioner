@@ -24,6 +24,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     url='https://github.com/Sage-Bionetworks-IT/pre-commit-provisioner',
+    packages=setuptools.find_packages(),
     entry_points={
         'console_scripts': [
             'compare-stack-and-file-names = linters:compare_file_and_stack_name'
