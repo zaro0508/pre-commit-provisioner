@@ -2,7 +2,7 @@ import os
 import utils
 
 
-def compare_file_and_stack_name(paths='config/', suffix='.yaml'):
+def compare_file_and_stack_name(paths=['config/'], suffix='.yaml'):
     new_file_paths = utils.list_new_configs(paths)
     for path in new_file_paths:
         config = utils.load_config(path)
