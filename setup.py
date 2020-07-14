@@ -4,7 +4,8 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 install_requirements = [
-   'gitpython>=3.1,<4',
+    'gitpython>=3.1,<4',
+    'pyyaml>=5.3.1,<6'
 ]
 
 setuptools.setup(
