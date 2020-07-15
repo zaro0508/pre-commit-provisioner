@@ -5,7 +5,10 @@ This repo contains scripts for the purpose of pre-commit processing
 ## Installation 
 
 The scripts in this repo can currently be installed by running
-`pip install .` while this repo's root is the working directory.
+`pip install --editable .` with the working directory set to this
+repo's root directory. For some reason, `pip install .` does not
+seem to work yet, which is delaying the deployment of this package
+as a pre-commit hook.
 
 ## Usage
 
