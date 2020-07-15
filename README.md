@@ -10,9 +10,14 @@ repo's root directory. For some reason, `pip install .` does not
 seem to work yet, which is delaying the deployment of this package
 as a pre-commit hook.
 
+Due to the above-mentioned error with `pip install .`, this package
+cannot be added to a `.pre-commit-config.yaml`.
+
 ## Usage
 
 The script `compare-stack-and-file-names` can be run from the root of
 a Git repo. It will look for any files ending in `.yaml` under the
 directory `./config/`, attempt to parse them (as YAML files) and check
-that the value of the `stack_name` 
+that the value of the `stack_name` matches the file name (minus `.yaml`).
+
+Currently, no arguments or other parameters can be passed to this linter.
