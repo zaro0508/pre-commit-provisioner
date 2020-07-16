@@ -18,6 +18,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     install_requires=install_requirements,
     license='Apache Software License',
+    packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
