@@ -1,0 +1,5 @@
+-   id: compare-stack-and-file-names
+    name: Stack name linter
+    description: "Ensure that all stacks have names consistent with their config filenames"
+    entry: compare-stack-and-file-names
+    language: python
