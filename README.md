@@ -5,13 +5,17 @@ This repo contains scripts for the purpose of pre-commit processing
 ## Installation 
 
 The scripts in this repo can currently be installed by running
-`pip install --editable .` with the working directory set to this
-repo's root directory. For some reason, `pip install .` does not
-seem to work yet, which is delaying the deployment of this package
-as a pre-commit hook.
+`pip install .` with the working directory set to this repo's root
+directory.
 
-Due to the above-mentioned error with `pip install .`, this package
-cannot be added to a `.pre-commit-config.yaml`.
+This can also be used as a pre-commit hook, by including the following
+in `.pre-commit-config.yaml`: 
+```
+-   repo: https://github.com/Sage-Bionetworks-IT/pre-commit-provisioner
+    rev: v0.0.1
+    hooks:
+    -    id: compare-stack-and-file-names
+```
 
 ## Usage
 
