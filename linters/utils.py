@@ -1,5 +1,5 @@
-from git import Repo, DiffIndex, Diff
 from yaml import load, FullLoader
+from pathlib import Path
 
 
 # Let YAML handle tags naively
@@ -18,22 +18,12 @@ def load_config(config_path):
         return load(new_file, Loader=FullLoader)
 
 
-def list_new_configs(paths, suffix='.yaml'):
-    """Use Git to list new (in the staging area) files ending in '.yaml' in `paths`
+def is_subpath(parent_path: str, child_path: str):
+    """Return True if `child_path is a sub-path of `parent_path`
 
-    :param paths: (list) paths in which to check for config files
-    :param suffix: (str) filename suffix that config files are expected to have
-    :return: list of relative paths for config files
+    :param parent_path:
+    :param child_path:
+    :return:
     """
-    repo = Repo()
+    return Path(parent_path) in Path(child_path).parents
 
-    # Get diff of staging area and working tree (i.e. files about to committed)
-    diff_index: DiffIndex = repo.head.commit.diff(paths=paths)
-
-    filepaths = []
-    diff: Diff
-    for diff in diff_index:
-        # If a file has been added or modified, the filename ends with the correct extension:
-        if diff.change_type in {'A', 'M'} and diff.a_path.endswith(suffix):
-            filepaths.append(diff.a_path)
-    return filepaths
