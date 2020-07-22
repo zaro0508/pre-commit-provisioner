@@ -12,7 +12,7 @@ This can also be used as a pre-commit hook, by including the following
 in `.pre-commit-config.yaml`: 
 ```
 -   repo: https://github.com/Sage-Bionetworks-IT/pre-commit-provisioner
-    rev: v0.0.1
+    rev: v0.0.4
     hooks:
     -    id: compare-stack-and-file-names
 ```
