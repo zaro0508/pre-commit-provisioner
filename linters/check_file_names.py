@@ -2,7 +2,7 @@ import os
 import sys
 from .utils import load_config, is_subpath
 
-PATHS = ['config/']
+PATHS = ['config/prod/', 'config/dev/']
 SUFFIX = '.yaml'
 
 

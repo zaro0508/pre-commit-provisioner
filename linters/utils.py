@@ -3,8 +3,6 @@ from jinja2 import Template
 from pathlib import Path
 
 
-
-
 def load_config(config_path):
     """Produce a Python object (usually dict-like) from the config file at `config_path`
 
