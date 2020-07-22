@@ -21,7 +21,8 @@ in `.pre-commit-config.yaml`:
 
 The script `compare-stack-and-file-names` can be run from the root of
 a Git repo. It will look for any files ending in `.yaml` under the
-directory `./config/`, attempt to parse them (as YAML files) and check
-that the value of the `stack_name` matches the file name (minus `.yaml`).
+directories `./config/prod/` & `./config/dev/`, render them as Jinja2
+templates, then attempt to parse the result (as YAML files) and check
+that the value of `stack_name` matches the file name (minus `.yaml`).
 
 Currently, no arguments or other parameters can be passed to this linter.
