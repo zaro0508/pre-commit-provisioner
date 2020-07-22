@@ -5,7 +5,8 @@ with open('README.md', 'r') as fh:
 
 install_requirements = [
     'gitpython>=3.1,<4',
-    'pyyaml>=5.3.1,<6'
+    'pyyaml>=5.3.1,<6',
+    'Jinja2>=2.11.2,<3',
 ]
 
 setuptools.setup(
