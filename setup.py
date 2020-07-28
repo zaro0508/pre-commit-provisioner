@@ -28,7 +28,8 @@ setuptools.setup(
     url='https://github.com/Sage-Bionetworks-IT/pre-commit-provisioner',
     entry_points={
         'console_scripts': [
-            'compare-stack-and-file-names = linters.check_file_names:compare_file_and_stack_names'
+            'compare-stack-and-file-names = linters.check_file_names:compare_file_and_stack_names',
+            'check-stack-names = linters.check_stack_names:check_stack_names'
         ]
     },
     python_requires = '>=3.6'
