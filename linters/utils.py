@@ -30,3 +30,19 @@ def is_subpath(parent_path: str, child_path: str):
     """
     return Path(parent_path) in Path(child_path).parents
 
+
+PATHS = ['config/prod/', 'config/dev/']
+SUFFIX = '.yaml'
+
+
+def get_new_config_paths(all_new_paths):
+    """Given a collection of modified paths `all_new_paths`, return those whose paths and file extensions indicate that
+    they are Sceptre config files.
+
+    :param all_new_paths:
+    :return:
+    """
+    new_config_paths = []
+    for parent_path in PATHS:
+        new_config_paths += [path for path in all_new_paths if is_subpath(parent_path, path)]
+    return new_config_paths
