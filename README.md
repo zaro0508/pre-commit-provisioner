@@ -8,8 +8,8 @@ The scripts in this repo can currently be installed by running
 `pip install .` with the working directory set to this repo's root
 directory.
 
-This can also be used as a pre-commit hook, by including the following
-in `.pre-commit-config.yaml`: 
+This can also be [used as a pre-commit hook](https://pre-commit.com/#2-add-a-pre-commit-configuration), by including the
+following in `.pre-commit-config.yaml`: 
 ```
 -   repo: https://github.com/Sage-Bionetworks-IT/pre-commit-provisioner
     rev: INSERT_VERSION
