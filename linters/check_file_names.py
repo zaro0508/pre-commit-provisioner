@@ -1,17 +1,11 @@
 import os
 import sys
-from .utils import load_config, is_subpath
-
-PATHS = ['config/prod/', 'config/dev/']
-SUFFIX = '.yaml'
+from .utils import load_config, SUFFIX, get_new_config_paths
 
 
 def compare_file_and_stack_names():
     all_new_paths = sys.argv[1:]
-
-    new_config_paths = []
-    for parent_path in PATHS:
-        new_config_paths += [path for path in all_new_paths if is_subpath(parent_path, path)]
+    new_config_paths = get_new_config_paths(all_new_paths)
 
     return_code = 0
     for path in new_config_paths:
