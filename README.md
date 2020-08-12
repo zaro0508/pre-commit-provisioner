@@ -1,4 +1,3 @@
-# Provisioner Pre-Commit Hooks
 This repo contains scripts for the purpose of pre-commit processing
 (e.g. linting) of Sceptre templates.
 
@@ -39,7 +38,7 @@ https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console
 
 ```shell script
 ➜ compare-stack-and-file-names ./config/prod/*.yaml
-- Stack name 'te_sts3' does not match file name 'tests_3.yaml'
+- Stack name 'foo-stack' does not match file name 'foo_stack.yaml'
 ```
 
 ### Pre-commit hook
