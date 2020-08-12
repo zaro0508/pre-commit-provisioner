@@ -32,9 +32,14 @@ Running scripts:
 ➜ check-stack-names ./config/prod/*.yaml
 - 'foo_ec2' is an invalid stack name (in './config/prod/ec2.yaml')
 - 'bar bucket' is an invalid stack name (in './config/prod/s3.yaml')
-A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
+```
+__NOTE__: A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
 It must start with an alphabetic character and can't be longer than 128 characters.
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html
+
+```shell script
+➜ compare-stack-and-file-names ./config/prod/*.yaml
+- Stack name 'te_sts3' does not match file name 'tests_3.yaml'
 ```
 
 ### Pre-commit hook
@@ -49,6 +54,8 @@ by including the following in `.pre-commit-config.yaml`:
 ```
 replacing `INSERT_VERSION` with a version tag or commit SHA-1.
 
+
+After adding the above to one's pre-commit config file, one can run this hook as follows:
 ```shell script
 ➜ pre-commit run --all-files
 Stack name linter........................................................Failed
@@ -57,6 +64,4 @@ Stack name linter........................................................Failed
 
 - 'foo_ec2' is an invalid stack name (in 'config/prod/ec2.yaml')
 - 'bar bucket' is an invalid stack name (in 'config/prod/s3.yaml')
-A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html
 ```
