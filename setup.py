@@ -29,7 +29,8 @@ setuptools.setup(
     entry_points={
         'console_scripts': [
             'compare-stack-and-file-names = linters.check_file_names:compare_file_and_stack_names',
-            'check-stack-names = linters.check_stack_names:check_stack_names'
+            'check-stack-names = linters.check_stack_names:check_stack_names',
+            'check-stack-tags = linters.check_stack_tags:check_stack_tags'
         ]
     },
     python_requires = '>=3.6'

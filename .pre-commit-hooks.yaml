@@ -8,3 +8,8 @@
     description: "Ensure that all stacks have valid names"
     entry: check-stack-names
     language: python
+-   id: check-stack-tags
+    name: Stack tags linter
+    description: "Ensure that all stacks are tagged"
+    entry: check-stack-tags
+    language: python

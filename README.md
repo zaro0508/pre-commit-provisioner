@@ -1,5 +1,5 @@
 This repo contains scripts for the purpose of pre-commit processing
-(e.g. linting) of Sceptre templates.
+(e.g. linting) of Sceptre config files.
 
 ## Installation 
 
@@ -17,9 +17,11 @@ It will process files ending in `.yaml` under the
 attempt to parse the result (as YAML files) and check that the value
 of the `stack_name` matches the file name (minus `.yaml`).
 
-* `check-stack-names` Checks for valid stack names in templates.  Valid
+* `check-stack-names` Checks for valid stack names in sceptre configs.  Valid
 stack names are [constraints specified by
 CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html)
+
+* `check-stack-tags` Checks for 'stack_tags' definition in sceptre configs.
 
 Currently, no arguments or other parameters can be passed to these linters.
 
@@ -33,8 +35,9 @@ Running scripts:
 - 'bar bucket' is an invalid stack name (in './config/prod/s3.yaml')
 ```
 __NOTE__: A stack name can contain only alphanumeric characters (case-sensitive) and hyphens.
-It must start with an alphabetic character and can't be longer than 128 characters.
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html
+It must start with an alphabetic character and can't be longer than 128 characters. For more
+details refer to the [AWS documentation](
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html)
 
 ```shell script
 ➜ compare-stack-and-file-names ./config/prod/*.yaml
@@ -50,6 +53,7 @@ by including the following in `.pre-commit-config.yaml`:
     hooks:
     -    id: compare-stack-and-file-names
     -    id: check-stack-names
+    -    id: check-stack-tags
 ```
 replacing `INSERT_VERSION` with a version tag or commit SHA-1.
 
